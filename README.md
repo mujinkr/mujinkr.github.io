@@ -83,3 +83,7 @@ Linux 전용 시스템 콜(`epoll`, `signalfd`, `accept4`)을 사용하며, 아�
 ### 소스 코드
 
 - [Gomoku Multiplayer GitHub 저장소](https://github.com/fromzero000/gomoku-multiplayer)
+
+## 이력서 (PDF)
+
+- <a href="assets/mujinkr-portfolio.pdf" download>포트폴리오 이력서 PDF 다운로드</a>
