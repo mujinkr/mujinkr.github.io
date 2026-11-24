@@ -53,30 +53,30 @@ Linux 전용 시스템 콜(`epoll`, `signalfd`, `accept4`)을 사용하며, 아�
 
 1. 저장소를 내려받고 필수 패키지를 설치한 뒤 빌드합니다.
 
-```bash
-git clone https://github.com/fromzero000/gomoku-multiplayer.git
-cd gomoku-multiplayer
-sudo apt install build-essential cmake libfmt-dev
-cmake -S . -B build
-cmake --build build -j
-```
+   ```bash
+   git clone https://github.com/fromzero000/gomoku-multiplayer.git
+   cd gomoku-multiplayer
+   sudo apt install build-essential cmake libfmt-dev
+   cmake -S . -B build
+   cmake --build build -j
+   ```
 
 2. 터미널 3개를 열어 서버 1개와 클라이언트 2개를 실행합니다.
 
-```bash
-# 터미널 1: 서버 실행
-./build/src/server/gomoku_server 9000
+   ```bash
+   # 터미널 1: 서버 실행
+   ./build/src/server/gomoku_server 9000
 
-# 터미널 2: 흑 플레이어
-./build/src/client/gomoku_client 127.0.0.1 9000 alice
-> create            # 방 생성, 상대 대기
+   # 터미널 2: 흑 플레이어
+   ./build/src/client/gomoku_client 127.0.0.1 9000 alice
+   > create            # 방 생성, 상대 대기
 
-# 터미널 3: 백 플레이어
-./build/src/client/gomoku_client 127.0.0.1 9000 bob
-> list              # 방 목록 조회
-> join 1            # 방 입장 및 대국 시작
-> 7 7               # 착수: row col (0~14)
-```
+   # 터미널 3: 백 플레이어
+   ./build/src/client/gomoku_client 127.0.0.1 9000 bob
+   > list              # 방 목록 조회
+   > join 1            # 방 입장 및 대국 시작
+   > 7 7               # 착수: row col (0~14)
+   ```
 
 지원하는 클라이언트 명령어는 `list`, `create`, `join <번호>`, `leave`, `<row> <col>`, `ping`, `help`, `quit`입니다. 단위 테스트, 인수 테스트, Sanitizer 빌드 등 자세한 안내는 [Gomoku Multiplayer README](https://github.com/fromzero000/gomoku-multiplayer#readme)에서 확인할 수 있습니다.
 
